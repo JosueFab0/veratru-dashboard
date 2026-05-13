@@ -3,138 +3,566 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>VeraTru Operations Dashboard</title>
 
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:#f5f7fb;color:#06152f}
-    a{text-decoration:none;color:inherit}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f5f7fb;
+      color:#06152f;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ================= NAVBAR ================= */
 
     .navbar{
-      height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;
-      padding:0 34px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:1000
+      height:72px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 34px;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
-    .nav-left{display:flex;align-items:center;gap:24px}
-    .logo{font-size:31px;font-weight:700;color:#18386b;letter-spacing:-1px}
-    .logo span{color:#b58b55}
-    .nav-links{display:flex;gap:34px;font-size:14px;font-weight:600}
-    .nav-links a{padding:26px 0}
-    .nav-links a.active{color:#0f2e68;border-bottom:3px solid #0f2e68}
-    .icon-top{font-size:20px;color:#06152f}
+
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .menu-icon{
+      font-size:22px;
+      color:#06152f;
+    }
+
+    .logo{
+      font-size:31px;
+      font-weight:700;
+      color:#18386b;
+      letter-spacing:-1px;
+    }
+
+    .logo span{
+      color:#b58b55;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:34px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-links a{
+      padding:26px 0;
+    }
+
+    .nav-links a.active{
+      color:#0f2e68;
+      border-bottom:3px solid #0f2e68;
+    }
+
+    .search-icon{
+      font-size:21px;
+      color:#06152f;
+    }
+
+    /* ================= HERO ================= */
 
     .hero{
-      background:linear-gradient(135deg,rgba(4,20,50,.96),rgba(14,55,116,.96));
-      color:white;padding:70px 9%;display:grid;grid-template-columns:1.35fr .85fr;gap:50px;align-items:center
+      background:
+        linear-gradient(135deg,rgba(4,20,50,.96),rgba(14,55,116,.96)),
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.08),transparent 30%);
+      color:white;
+      padding:80px 9%;
     }
-    .hero h1{font-size:50px;line-height:1.05;margin-bottom:24px;letter-spacing:-1px}
-    .hero p{font-size:19px;line-height:1.6;max-width:520px}
-    .announcement{
-      background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:28px;max-width:360px;justify-self:end
-    }
-    .announcement h3{font-size:18px;margin-bottom:18px;display:flex;gap:12px;align-items:center}
-    .announcement p{font-size:14px;line-height:1.6}
 
-    .blue-strip{background:#123d80;padding:18px 0}
-    .search-wrapper{display:flex;justify-content:center}
+    .hero h1{
+      font-size:52px;
+      line-height:1.05;
+      margin-bottom:24px;
+      letter-spacing:-1px;
+    }
+
+    .hero p{
+      font-size:19px;
+      line-height:1.6;
+      max-width:540px;
+    }
+
+    /* ================= SEARCH BAR ================= */
+
+    .blue-strip{
+      background:#123d80;
+      padding:18px 0;
+    }
+
+    .search-wrapper{
+      display:flex;
+      justify-content:center;
+    }
+
     .search-box{
-      width:57%;background:white;border:1px solid #d7dce5;border-radius:8px;padding:17px 22px;
-      display:flex;gap:14px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.12);color:#6b7280
+      width:57%;
+      background:white;
+      border:1px solid #d7dce5;
+      border-radius:8px;
+      padding:17px 22px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+      color:#6b7280;
     }
-    .search-box input{border:none;outline:none;width:100%;font-size:15px;font-family:inherit}
 
-    .container{width:94%;max-width:1280px;margin:0 auto}
-    .panel{background:white;border-radius:18px;margin-top:12px;padding:32px 28px;box-shadow:0 8px 24px rgba(0,0,0,.04)}
-    .section-title{display:flex;align-items:center;gap:14px;color:#092a61;font-size:25px;margin-bottom:5px}
-    .section-subtitle{color:#4b5563;font-size:14px;margin-left:38px;margin-bottom:28px}
+    .search-box input{
+      border:none;
+      outline:none;
+      width:100%;
+      font-size:15px;
+      font-family:inherit;
+    }
 
-    .core-layout{display:grid;grid-template-columns:2fr 1fr;gap:36px;align-items:start}
-    .core-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    /* ================= MAIN LAYOUT ================= */
+
+    .container{
+      width:94%;
+      max-width:1280px;
+      margin:0 auto;
+    }
+
+    .panel{
+      background:white;
+      border-radius:18px;
+      margin-top:12px;
+      padding:32px 28px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:#092a61;
+      font-size:25px;
+      margin-bottom:5px;
+    }
+
+    .section-subtitle{
+      color:#4b5563;
+      font-size:14px;
+      margin-left:38px;
+      margin-bottom:28px;
+    }
+
+    /* ================= CORE ACTIONS ================= */
+
+    .core-layout{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:36px;
+      align-items:start;
+    }
+
+    .core-cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
     .big-card{
-      border:1px solid #d7dce5;border-radius:10px;min-height:230px;padding:28px 18px;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-      transition:.2s ease;background:white
+      border:1px solid #d7dce5;
+      border-radius:10px;
+      min-height:230px;
+      padding:28px 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      transition:.2s ease;
+      background:white;
     }
-    .big-card:hover,.tool-card:hover,.procedure-card:hover,.help-item:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.07)}
+
+    .big-card:hover,
+    .tool-card:hover,
+    .procedure-card:hover,
+    .help-item:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 22px rgba(0,0,0,.07);
+    }
+
     .icon-circle{
-      width:76px;height:76px;border-radius:50%;background:#0d438f;display:flex;align-items:center;
-      justify-content:center;color:white;font-size:30px;margin-bottom:18px
+      width:76px;
+      height:76px;
+      border-radius:50%;
+      background:#0d438f;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:30px;
+      margin-bottom:18px;
     }
-    .green{background:#1ca65c}.blue{background:#2d73d5}.gold{background:#c28a2c}
-    .big-card h3{font-size:18px;color:#06152f;margin-bottom:14px;line-height:1.2}
-    .arrow{font-size:20px;color:#092a61;margin-top:8px}
 
-    .quick-help{border-left:1px solid #e5e7eb;padding-left:28px}
-    .help-list{display:flex;flex-direction:column;border:1px solid #d7dce5;border-radius:12px;overflow:hidden;background:white}
+    .green{
+      background:#1ca65c;
+    }
+
+    .blue{
+      background:#2d73d5;
+    }
+
+    .gold{
+      background:#c28a2c;
+    }
+
+    .big-card h3{
+      font-size:18px;
+      color:#06152f;
+      margin-bottom:14px;
+      line-height:1.2;
+    }
+
+    .arrow{
+      font-size:20px;
+      color:#092a61;
+      margin-top:8px;
+    }
+
+    /* ================= QUICK HELP ================= */
+
+    .quick-help{
+      border-left:1px solid #e5e7eb;
+      padding-left:28px;
+    }
+
+    .help-list{
+      display:flex;
+      flex-direction:column;
+      border:1px solid #d7dce5;
+      border-radius:12px;
+      overflow:hidden;
+      background:white;
+    }
+
     .help-item{
-      display:flex;align-items:center;justify-content:space-between;padding:17px 18px;
-      border-bottom:1px solid #e5e7eb;transition:.2s ease
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:17px 18px;
+      border-bottom:1px solid #e5e7eb;
+      transition:.2s ease;
     }
-    .help-item:last-child{border-bottom:none}
-    .help-left{display:flex;align-items:center;gap:14px}
+
+    .help-item:last-child{
+      border-bottom:none;
+    }
+
+    .help-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
     .small-icon{
-      width:38px;height:38px;border-radius:50%;border:1px solid #d7dce5;display:flex;
-      align-items:center;justify-content:center;color:#0d438f;font-size:16px;background:#f7f9fc
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      border:1px solid #d7dce5;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#0d438f;
+      font-size:16px;
+      background:#f7f9fc;
     }
-    .help-text strong{display:block;color:#092a61;font-size:14px;margin-bottom:4px}
-    .help-text span{font-size:12px;color:#4b5563}
 
-    .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .help-text strong{
+      display:block;
+      color:#092a61;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .help-text span{
+      font-size:12px;
+      color:#4b5563;
+    }
+
+    /* ================= TOOLS ================= */
+
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
     .tool-card{
-      background:white;border:1px solid #d7dce5;border-radius:10px;padding:22px;min-height:145px;
-      display:flex;justify-content:space-between;gap:18px;transition:.2s ease
+      background:white;
+      border:1px solid #d7dce5;
+      border-radius:10px;
+      padding:22px;
+      min-height:145px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      transition:.2s ease;
     }
-    .tool-content{display:flex;gap:16px}
-    .tool-icon{color:#1ca65c;font-size:30px;min-width:34px}
-    .tool-card h3{color:#092a61;font-size:16px;margin-bottom:12px}
-    .tool-card p{color:#4b5563;font-size:14px;line-height:1.5}
 
-    .procedures-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .tool-content{
+      display:flex;
+      gap:16px;
+    }
+
+    .tool-icon{
+      color:#1ca65c;
+      font-size:30px;
+      min-width:34px;
+    }
+
+    .tool-card h3{
+      color:#092a61;
+      font-size:16px;
+      margin-bottom:12px;
+    }
+
+    .tool-card p{
+      color:#4b5563;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    /* ================= PROCEDURES ================= */
+
+    .procedures-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
     .procedure-card{
-      border:1px solid #d7dce5;border-radius:10px;padding:24px;min-height:130px;display:flex;
-      align-items:center;justify-content:space-between;gap:20px;transition:.2s ease
+      border:1px solid #d7dce5;
+      border-radius:10px;
+      padding:24px;
+      min-height:130px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      transition:.2s ease;
     }
-    .procedure-left{display:flex;align-items:center;gap:18px}
-    .procedure-icon{font-size:38px;color:#6c4bd9}
-    .warning{color:#e58916}
-    .procedure-card h3{font-size:16px;color:#092a61;margin-bottom:8px}
-    .procedure-card p{font-size:14px;color:#4b5563;line-height:1.5}
 
-    .bottom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;margin-bottom:24px}
-    .info-panel{background:#f4f8ff;border:1px solid #d7e3f7;border-radius:12px;padding:28px;min-height:240px}
-    .info-panel h3{color:#092a61;font-size:22px;margin-bottom:18px;display:flex;gap:12px;align-items:center}
-    .info-panel ul{list-style:none;line-height:2;color:#06152f;font-size:14px}
-    .info-panel li i{color:#0d438f;margin-right:8px}
-    .link-list li{display:flex;justify-content:space-between;align-items:center}
-    .support-buttons{display:flex;flex-direction:column;gap:12px;margin-top:24px}
-    .btn-primary,.btn-secondary{padding:14px;border-radius:8px;text-align:center;font-weight:700;font-size:14px}
-    .btn-primary{background:#0d438f;color:white}
-    .btn-secondary{border:1px solid #0d438f;color:#0d438f;background:white}
+    .procedure-left{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
 
-    footer{background:#062a5c;color:white;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;margin-top:20px}
-    .footer-left{display:flex;align-items:center;gap:12px;font-size:14px}
-    .footer-left i{font-size:28px}
-    .footer-right{display:flex;align-items:center;gap:26px;font-size:14px}
-    .footer-icons{display:flex;gap:22px;font-size:17px}
+    .procedure-icon{
+      font-size:38px;
+      color:#6c4bd9;
+    }
+
+    .warning{
+      color:#e58916;
+    }
+
+    .procedure-card h3{
+      font-size:16px;
+      color:#092a61;
+      margin-bottom:8px;
+    }
+
+    .procedure-card p{
+      font-size:14px;
+      color:#4b5563;
+      line-height:1.5;
+    }
+
+    /* ================= BOTTOM PANELS ================= */
+
+    .bottom-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:18px;
+      margin-bottom:24px;
+    }
+
+    .info-panel{
+      background:#f4f8ff;
+      border:1px solid #d7e3f7;
+      border-radius:12px;
+      padding:28px;
+      min-height:240px;
+    }
+
+    .info-panel h3{
+      color:#092a61;
+      font-size:22px;
+      margin-bottom:18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .info-panel ul{
+      list-style:none;
+      line-height:2;
+      color:#06152f;
+      font-size:14px;
+    }
+
+    .info-panel li i{
+      color:#0d438f;
+      margin-right:8px;
+    }
+
+    .link-list li{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .support-buttons{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      padding:14px;
+      border-radius:8px;
+      text-align:center;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .btn-primary{
+      background:#0d438f;
+      color:white;
+    }
+
+    .btn-secondary{
+      border:1px solid #0d438f;
+      color:#0d438f;
+      background:white;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#062a5c;
+      color:white;
+      padding:24px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:20px;
+    }
+
+    .footer-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:14px;
+    }
+
+    .footer-left i{
+      font-size:28px;
+    }
+
+    .footer-right{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:14px;
+    }
+
+    .footer-icons{
+      display:flex;
+      gap:22px;
+      font-size:17px;
+    }
+
+    /* ================= MOBILE ================= */
 
     @media(max-width:950px){
-      .nav-links{display:none}.hero{grid-template-columns:1fr}.announcement{justify-self:start;max-width:100%}
-      .search-box{width:90%}.core-layout,.bottom-grid{grid-template-columns:1fr}.quick-help{border-left:none;padding-left:0}
-      .core-cards,.tools-grid,.procedures-grid{grid-template-columns:1fr}.hero h1{font-size:38px}
-      footer{flex-direction:column;gap:20px}
+      .nav-links{
+        display:none;
+      }
+
+      .search-box{
+        width:90%;
+      }
+
+      .core-layout,
+      .bottom-grid{
+        grid-template-columns:1fr;
+      }
+
+      .quick-help{
+        border-left:none;
+        padding-left:0;
+      }
+
+      .core-cards,
+      .tools-grid,
+      .procedures-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      footer{
+        flex-direction:column;
+        gap:20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ================= NAVBAR ================= -->
+
   <nav class="navbar">
     <div class="nav-left">
-      <i class="fa-solid fa-bars icon-top"></i>
+      <i class="fa-solid fa-bars menu-icon"></i>
       <div class="logo">Vera<span>Tru</span></div>
     </div>
 
@@ -147,20 +575,19 @@
       <a href="#">Help</a>
     </div>
 
-    <i class="fa-solid fa-magnifying-glass icon-top"></i>
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
   </nav>
+
+  <!-- ================= HERO ================= -->
 
   <section class="hero">
     <div>
       <h1>Operations Dashboard</h1>
       <p>Post payments, validate cases, and access tools in seconds.</p>
     </div>
-
-    <div class="announcement">
-      <h3><i class="fa-solid fa-bullhorn"></i> Announcements</h3>
-      <p>There are no new announcements at this time.</p>
-    </div>
   </section>
+
+  <!-- ================= SEARCH BAR ================= -->
 
   <div class="blue-strip">
     <div class="search-wrapper">
@@ -173,38 +600,55 @@
 
   <main class="container">
 
+    <!-- ================= CORE ACTIONS ================= -->
+
     <section class="panel">
       <div class="core-layout">
+
         <div>
-          <h2 class="section-title"><i class="fa-solid fa-bolt"></i> Core Actions</h2>
-          <p class="section-subtitle">Your most used tools — one click away.</p>
+          <h2 class="section-title">
+            <i class="fa-solid fa-bolt"></i>
+            Core Actions
+          </h2>
+
+          <p class="section-subtitle">
+            Your most used tools — one click away.
+          </p>
 
           <div class="core-cards">
 
             <!-- LINK PARA IDRE PORTAL -->
             <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle"><i class="fa-solid fa-money-bill-transfer"></i></div>
+              <div class="icon-circle">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </div>
               <h3>IDRE Portal</h3>
               <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
 
             <!-- LINK PARA OPERATIONS SHEETS -->
             <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle green"><i class="fa-solid fa-file-excel"></i></div>
+              <div class="icon-circle green">
+                <i class="fa-solid fa-file-excel"></i>
+              </div>
               <h3>Operations Sheets</h3>
               <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
 
             <!-- LINK PARA PROJECTS SPREADSHEET -->
             <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle blue"><i class="fa-solid fa-diagram-project"></i></div>
+              <div class="icon-circle blue">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
               <h3>Projects Spreadsheet</h3>
               <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
 
             <!-- LINK PARA NEW OPERATIONS WEB APP -->
             <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle gold"><i class="fa-solid fa-window-restore"></i></div>
+              <div class="icon-circle gold">
+                <i class="fa-solid fa-window-restore"></i>
+              </div>
               <h3>New Operations Web App</h3>
               <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
@@ -212,16 +656,26 @@
           </div>
         </div>
 
+        <!-- ================= QUICK HELP ================= -->
+
         <div class="quick-help">
-          <h2 class="section-title"><i class="fa-regular fa-circle-question"></i> Quick Help</h2>
-          <p class="section-subtitle">Fast access to shared team resources.</p>
+          <h2 class="section-title">
+            <i class="fa-regular fa-circle-question"></i>
+            Quick Help
+          </h2>
+
+          <p class="section-subtitle">
+            Fast access to shared team resources.
+          </p>
 
           <div class="help-list">
 
             <!-- LINK PARA PTO FORM -->
             <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
               <div class="help-left">
-                <div class="small-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="small-icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
                 <div class="help-text">
                   <strong>PTO & Sick day Form</strong>
                   <span>Shared calendar and PTO requests</span>
@@ -233,7 +687,9 @@
             <!-- LINK PARA TEAM MEETING -->
             <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
               <div class="help-left">
-                <div class="small-icon"><i class="fa-solid fa-video"></i></div>
+                <div class="small-icon">
+                  <i class="fa-solid fa-video"></i>
+                </div>
                 <div class="help-text">
                   <strong>Team Meeting Link</strong>
                   <span>Group meeting access</span>
@@ -242,10 +698,12 @@
               <i class="fa-solid fa-chevron-right"></i>
             </a>
 
-            <!-- LINK PARA SOP / GUIDES -->
+            <!-- LINK PARA SOPS -->
             <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
               <div class="help-left">
-                <div class="small-icon"><i class="fa-solid fa-book"></i></div>
+                <div class="small-icon">
+                  <i class="fa-solid fa-book"></i>
+                </div>
                 <div class="help-text">
                   <strong>SOPs & Policies</strong>
                   <span>Guides and internal procedures</span>
@@ -254,10 +712,12 @@
               <i class="fa-solid fa-chevron-right"></i>
             </a>
 
-            <!-- LINK PARA HELP / SUPPORT -->
+            <!-- LINK PARA HELP -->
             <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
               <div class="help-left">
-                <div class="small-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="small-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
                 <div class="help-text">
                   <strong>Need Support?</strong>
                   <span>Help center or support channel</span>
@@ -268,19 +728,30 @@
 
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- ================= TOOLS & REPORTS ================= -->
+
     <section class="panel">
-      <h2 class="section-title"><i class="fa-solid fa-chart-column"></i> Tools & Reports</h2>
-      <p class="section-subtitle">Access reports, trackers, and operational tools.</p>
+      <h2 class="section-title">
+        <i class="fa-solid fa-chart-column"></i>
+        Tools & Reports
+      </h2>
+
+      <p class="section-subtitle">
+        Access reports, trackers, and operational tools.
+      </p>
 
       <div class="tools-grid">
 
         <!-- LINK PARA OPERATIONS SHEETS -->
         <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="tool-content">
-            <div class="tool-icon"><i class="fa-solid fa-file-excel"></i></div>
+            <div class="tool-icon">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
             <div>
               <h3>Operations Sheets</h3>
               <p>Daily operations sheets and payment tracking.</p>
@@ -292,7 +763,9 @@
         <!-- LINK PARA PROJECTS SPREADSHEET -->
         <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="tool-content">
-            <div class="tool-icon"><i class="fa-solid fa-table"></i></div>
+            <div class="tool-icon">
+              <i class="fa-solid fa-table"></i>
+            </div>
             <div>
               <h3>Projects Spreadsheet</h3>
               <p>Project tracking, updates, and follow ups.</p>
@@ -304,7 +777,9 @@
         <!-- LINK PARA PTO FORM -->
         <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="tool-content">
-            <div class="tool-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="tool-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
             <div>
               <h3>PTO & Sick day Form</h3>
               <p>Submit PTO or sick day requests.</p>
@@ -316,7 +791,9 @@
         <!-- LINK PARA TEAM MEETING -->
         <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="tool-content">
-            <div class="tool-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="tool-icon">
+              <i class="fa-solid fa-video"></i>
+            </div>
             <div>
               <h3>Team Meeting Link</h3>
               <p>Access the group meeting room.</p>
@@ -328,16 +805,26 @@
       </div>
     </section>
 
+    <!-- ================= STANDARD PROCEDURES ================= -->
+
     <section class="panel">
-      <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Standard Procedures</h2>
-      <p class="section-subtitle">Step-by-step guides and procedures.</p>
+      <h2 class="section-title">
+        <i class="fa-solid fa-book-open"></i>
+        Standard Procedures
+      </h2>
+
+      <p class="section-subtitle">
+        Step-by-step guides and procedures.
+      </p>
 
       <div class="procedures-grid">
 
         <!-- LINK PARA FULL SOP -->
         <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="procedure-left">
-            <div class="procedure-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <div class="procedure-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
             <div>
               <h3>Full SOP</h3>
               <p>Complete Standard Operating Procedures.</p>
@@ -346,10 +833,12 @@
           <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
-        <!-- LINK PARA POSTING PAYMENTS GUIDE -->
+        <!-- LINK PARA POSTING PAYMENTS -->
         <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="procedure-left">
-            <div class="procedure-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div class="procedure-icon">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
             <div>
               <h3>Posting Payments</h3>
               <p>Step-by-step guide to post payments.</p>
@@ -358,10 +847,12 @@
           <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
-        <!-- LINK PARA HANDLING EXCEPTIONS GUIDE -->
+        <!-- LINK PARA HANDLING EXCEPTIONS -->
         <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
           <div class="procedure-left">
-            <div class="procedure-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="procedure-icon warning">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
             <div>
               <h3>Handling Exceptions</h3>
               <p>Special cases and exceptions.</p>
@@ -373,10 +864,16 @@
       </div>
     </section>
 
+    <!-- ================= BOTTOM PANELS ================= -->
+
     <section class="bottom-grid">
 
       <div class="info-panel">
-        <h3><i class="fa-regular fa-bell"></i> Daily Reminders</h3>
+        <h3>
+          <i class="fa-regular fa-bell"></i>
+          Daily Reminders
+        </h3>
+
         <ul>
           <li><i class="fa-regular fa-circle-check"></i> Check IDRE for new payments</li>
           <li><i class="fa-regular fa-circle-check"></i> Verify amounts and customer info</li>
@@ -387,7 +884,11 @@
       </div>
 
       <div class="info-panel">
-        <h3><i class="fa-solid fa-link"></i> Helpful Links</h3>
+        <h3>
+          <i class="fa-solid fa-link"></i>
+          Helpful Links
+        </h3>
+
         <ul class="link-list">
           <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">IDRE Portal</a><i class="fa-solid fa-up-right-from-square"></i></li>
           <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">Operations Sheets</a><i class="fa-solid fa-up-right-from-square"></i></li>
@@ -398,18 +899,35 @@
       </div>
 
       <div class="info-panel">
-        <h3><i class="fa-solid fa-headset"></i> Need Support?</h3>
-        <p>Can't find what you need? Use the support channel or open the team meeting link.</p>
+        <h3>
+          <i class="fa-solid fa-headset"></i>
+          Need Support?
+        </h3>
+
+        <p>
+          Can't find what you need? Use the support channel or open the team meeting link.
+        </p>
 
         <div class="support-buttons">
-          <a class="btn-primary" href="XXXXXXXXXX LINK AQUI" target="_blank">Open Team Meeting</a>
-          <a class="btn-secondary" href="XXXXXXXXXX LINK AQUI" target="_blank">Open Operations Sheets</a>
+
+          <!-- LINK PARA TEAM MEETING -->
+          <a class="btn-primary" href="XXXXXXXXXX LINK AQUI" target="_blank">
+            Open Team Meeting
+          </a>
+
+          <!-- LINK PARA OPERATIONS SHEETS -->
+          <a class="btn-secondary" href="XXXXXXXXXX LINK AQUI" target="_blank">
+            Open Operations Sheets
+          </a>
+
         </div>
       </div>
 
     </section>
 
   </main>
+
+  <!-- ================= FOOTER ================= -->
 
   <footer>
     <div class="footer-left">
@@ -419,6 +937,7 @@
 
     <div class="footer-right">
       <span>Stay connected</span>
+
       <div class="footer-icons">
         <i class="fa-solid fa-users"></i>
         <i class="fa-regular fa-envelope"></i>
