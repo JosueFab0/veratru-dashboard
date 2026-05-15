@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>VeraTru Operations Dashboard</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    VeraTru Operations Dashboard
+  </title>
 
   <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -15,6 +27,7 @@
   >
 
   <!-- FONT AWESOME -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -101,7 +114,12 @@
 
     .hero{
       background:
-      linear-gradient(135deg,rgba(4,20,50,.96),rgba(14,55,116,.96));
+      linear-gradient(
+        135deg,
+        rgba(4,20,50,.96),
+        rgba(14,55,116,.96)
+      );
+
       color:white;
       padding:80px 9%;
     }
@@ -119,11 +137,11 @@
       max-width:560px;
     }
 
-    /* ================= SEARCH BAR ================= */
+    /* ================= SEARCH ================= */
 
     .blue-strip{
       background:#123d80;
-      padding:18px 0;
+      padding:18px 0 40px 0;
     }
 
     .search-wrapper{
@@ -150,6 +168,37 @@
       width:100%;
       font-size:15px;
       font-family:inherit;
+    }
+
+    /* ================= SEARCH RESULTS ================= */
+
+    .search-results{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin-top:22px;
+      gap:14px;
+    }
+
+    .search-results p{
+      color:white;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .search-result-btn{
+      background:white;
+      color:#0d438f;
+      padding:14px 26px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.2s ease;
+      border:none;
+    }
+
+    .search-result-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 18px rgba(0,0,0,.15);
     }
 
     /* ================= MAIN ================= */
@@ -368,58 +417,6 @@
       line-height:1.5;
     }
 
-    /* ================= PROCEDURES ================= */
-
-    .procedures-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-
-    .procedure-card{
-      border:1px solid #d7dce5;
-      border-radius:10px;
-      padding:24px;
-      min-height:130px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      transition:.2s ease;
-    }
-
-    .procedure-card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 22px rgba(0,0,0,.07);
-    }
-
-    .procedure-left{
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
-
-    .procedure-icon{
-      font-size:38px;
-      color:#6c4bd9;
-    }
-
-    .warning{
-      color:#e58916;
-    }
-
-    .procedure-card h3{
-      font-size:16px;
-      color:#092a61;
-      margin-bottom:8px;
-    }
-
-    .procedure-card p{
-      font-size:14px;
-      color:#4b5563;
-      line-height:1.5;
-    }
-
     /* ================= BOTTOM ================= */
 
     .bottom-grid{
@@ -452,17 +449,6 @@
       line-height:2;
       color:#06152f;
       font-size:14px;
-    }
-
-    .info-panel li i{
-      color:#0d438f;
-      margin-right:8px;
-    }
-
-    .link-list li{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
     }
 
     .support-buttons{
@@ -504,31 +490,31 @@
       margin-top:20px;
     }
 
-    .footer-left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-size:14px;
-    }
+    @media(max-width:1100px){
 
-    .footer-left i{
-      font-size:28px;
-    }
+      .core-cards,
+      .tools-grid,
+      .bottom-grid{
+        grid-template-columns:1fr;
+      }
 
-    .footer-right{
-      display:flex;
-      align-items:center;
-      gap:26px;
-      font-size:14px;
-    }
+      .core-layout{
+        grid-template-columns:1fr;
+      }
 
-    .footer-icons{
-      display:flex;
-      gap:22px;
-      font-size:17px;
+      .quick-help{
+        border-left:none;
+        padding-left:0;
+      }
+
+      .search-box{
+        width:90%;
+      }
+
     }
 
   </style>
+
 </head>
 
 <body>
@@ -538,17 +524,33 @@
 <nav class="navbar">
 
   <div class="nav-left">
+
     <i class="fa-solid fa-bars menu-icon"></i>
-    <div class="logo">Vera<span>Tru</span></div>
+
+    <div class="logo">
+      Vera<span>Tru</span>
+    </div>
+
   </div>
 
   <div class="nav-links">
-    <a class="active" href="#">Home</a>
-    <a href="#">Operations</a>
-    <a href="#">SOPs & Policies</a>
-    <a href="#">Tools & Reports</a>
-    <a href="#">HR Resources</a>
-    <a href="#">Help</a>
+
+    <a class="active" href="#">
+      Home
+    </a>
+
+    <a href="#core-actions">
+      Operations
+    </a>
+
+    <a href="#tools">
+      Tools & Reports
+    </a>
+
+    <a href="#support">
+      Help
+    </a>
+
   </div>
 
   <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -559,7 +561,9 @@
 
 <section class="hero">
 
-  <h1>Operations Dashboard</h1>
+  <h1>
+    Operations Dashboard
+  </h1>
 
   <p>
     Post payments, validate cases, and access tools in seconds.
@@ -574,23 +578,30 @@
   <div class="search-wrapper">
 
     <div class="search-box">
+
       <i class="fa-solid fa-magnifying-glass"></i>
 
       <input
         type="text"
+        id="searchInput"
         placeholder="Search for documents, tools, and more..."
       >
+
     </div>
 
   </div>
+
+  <!-- SEARCH RESULTS -->
+
+  <div id="searchResults" class="search-results"></div>
 
 </div>
 
 <main class="container">
 
-  <!-- ================= CORE ACTIONS ================= -->
+  <!-- ================= CORE ================= -->
 
-  <section class="panel">
+  <section class="panel" id="core-actions">
 
     <div class="core-layout">
 
@@ -607,7 +618,7 @@
 
         <div class="core-cards">
 
-          <!-- IDRE PORTAL -->
+          <!-- IDRE -->
 
           <a
             class="big-card"
@@ -627,7 +638,7 @@
 
           </a>
 
-          <!-- OPERATIONS SHEETS -->
+          <!-- OPERATIONS -->
 
           <a
             class="big-card"
@@ -647,7 +658,7 @@
 
           </a>
 
-          <!-- PROJECTS SPREADSHEET -->
+          <!-- PROJECTS -->
 
           <a
             class="big-card"
@@ -667,7 +678,7 @@
 
           </a>
 
-          <!-- NEW WEB APP -->
+          <!-- WEB APP -->
 
           <a
             class="big-card"
@@ -706,7 +717,7 @@
 
         <div class="help-list">
 
-          <!-- PTO FORM -->
+          <!-- PTO -->
 
           <a
             class="help-item"
@@ -722,16 +733,14 @@
 
               <div class="help-text">
                 <strong>PTO & Sick day Form</strong>
-                <span>Shared calendar and PTO requests</span>
+                <span>Submit PTO requests</span>
               </div>
 
             </div>
 
-            <i class="fa-solid fa-chevron-right"></i>
-
           </a>
 
-          <!-- TEAM MEETING -->
+          <!-- MEETING -->
 
           <a
             class="help-item"
@@ -746,13 +755,11 @@
               </div>
 
               <div class="help-text">
-                <strong>Team Meeting Link</strong>
-                <span>Group meeting access</span>
+                <strong>Team Meeting</strong>
+                <span>Join the meeting room</span>
               </div>
 
             </div>
-
-            <i class="fa-solid fa-chevron-right"></i>
 
           </a>
 
@@ -771,13 +778,11 @@
               </div>
 
               <div class="help-text">
-                <strong>SOPs & Policies</strong>
-                <span>Guides and internal procedures</span>
+                <strong>Full SOP</strong>
+                <span>Standard operating procedures</span>
               </div>
 
             </div>
-
-            <i class="fa-solid fa-chevron-right"></i>
 
           </a>
 
@@ -791,7 +796,7 @@
 
   <!-- ================= TOOLS ================= -->
 
-  <section class="panel">
+  <section class="panel" id="tools">
 
     <h2 class="section-title">
       <i class="fa-solid fa-chart-column"></i>
@@ -843,7 +848,7 @@
 
           <div>
             <h3>Day of Purpose Policy</h3>
-            <p>Internal policy documentation.</p>
+            <p>Internal company policy.</p>
           </div>
 
         </div>
@@ -866,7 +871,7 @@
 
           <div>
             <h3>Floating Holiday Policy</h3>
-            <p>Company floating holiday policy.</p>
+            <p>Company holiday information.</p>
           </div>
 
         </div>
@@ -889,7 +894,7 @@
 
           <div>
             <h3>Full SOP</h3>
-            <p>Complete Standard Operating Procedures.</p>
+            <p>Complete operations guide.</p>
           </div>
 
         </div>
@@ -900,9 +905,9 @@
 
   </section>
 
-  <!-- ================= BOTTOM ================= -->
+  <!-- ================= SUPPORT ================= -->
 
-  <section class="bottom-grid">
+  <section class="bottom-grid" id="support">
 
     <!-- DAILY REMINDERS -->
 
@@ -916,28 +921,19 @@
       <ul>
 
         <li>
-          <i class="fa-regular fa-circle-check"></i>
           Check IDRE for new payments
         </li>
 
         <li>
-          <i class="fa-regular fa-circle-check"></i>
           Verify amounts and customer info
         </li>
 
         <li>
-          <i class="fa-regular fa-circle-check"></i>
           Use the correct operations sheet
         </li>
 
         <li>
-          <i class="fa-regular fa-circle-check"></i>
           Update status when needed
-        </li>
-
-        <li>
-          <i class="fa-regular fa-circle-check"></i>
-          Log any exceptions
         </li>
 
       </ul>
@@ -953,7 +949,7 @@
         Helpful Links
       </h3>
 
-      <ul class="link-list">
+      <ul>
 
         <li>
           <a href="https://app.veratru.com/dashboard/cases/d3afaf96-f3a8-441a-abf0-f9863cfad62b?tab=ledger" target="_blank">
@@ -964,18 +960,6 @@
         <li>
           <a href="https://docs.google.com/spreadsheets/d/18OF6YkI-QSkLeV4D7CJhDZTE8xgQJwZIkLsxRmgc7xU/edit?usp=drivesdk" target="_blank">
             Operations Sheets
-          </a>
-        </li>
-
-        <li>
-          <a href="https://docs.google.com/spreadsheets/d/1-rz8_BDvLMAA-rWYqqAsSRQbQYFNUiWfy1vPB96jNhM/edit?usp=sharing" target="_blank">
-            Projects Spreadsheet
-          </a>
-        </li>
-
-        <li>
-          <a href="https://forms.gle/ABVQ7HVnweMNgKb47" target="_blank">
-            PTO Form
           </a>
         </li>
 
@@ -1000,7 +984,6 @@
 
       <p>
         Can't find what you need?
-        Use the support channel or open the team meeting link.
       </p>
 
       <div class="support-buttons">
@@ -1033,24 +1016,104 @@
 
 <footer>
 
-  <div class="footer-left">
-    <i class="fa-solid fa-shield-halved"></i>
-    <span>VeraTru Operations Portal</span>
+  <div>
+    VeraTru Operations Portal
   </div>
 
-  <div class="footer-right">
-
-    <span>Stay connected</span>
-
-    <div class="footer-icons">
-      <i class="fa-solid fa-users"></i>
-      <i class="fa-regular fa-envelope"></i>
-      <i class="fa-solid fa-video"></i>
-    </div>
-
+  <div>
+    Stay connected
   </div>
 
 </footer>
 
+<!-- ================= SEARCH SCRIPT ================= -->
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+const links = [
+
+  {
+    keywords:["idre","portal","payment"],
+    title:"Open IDRE Portal",
+    url:"https://app.veratru.com/dashboard/cases/d3afaf96-f3a8-441a-abf0-f9863cfad62b?tab=ledger"
+  },
+
+  {
+    keywords:["operations","sheet","spreadsheet"],
+    title:"Open Operations Sheets",
+    url:"https://docs.google.com/spreadsheets/d/18OF6YkI-QSkLeV4D7CJhDZTE8xgQJwZIkLsxRmgc7xU/edit?usp=drivesdk"
+  },
+
+  {
+    keywords:["projects","project"],
+    title:"Open Projects Spreadsheet",
+    url:"https://docs.google.com/spreadsheets/d/1-rz8_BDvLMAA-rWYqqAsSRQbQYFNUiWfy1vPB96jNhM/edit?usp=sharing"
+  },
+
+  {
+    keywords:["pto","sick","vacation"],
+    title:"Open PTO Form",
+    url:"https://forms.gle/ABVQ7HVnweMNgKb47"
+  },
+
+  {
+    keywords:["meeting","call","google meet"],
+    title:"Open Team Meeting",
+    url:"https://meet.google.com/hcv-aoyw-meg?authuser=0"
+  },
+
+  {
+    keywords:["sop","policy","procedures"],
+    title:"Open SOP",
+    url:"https://docs.google.com/document/d/1X807uuvjo1gSMC1VzGhYQEEOYMwDRNWKwEV2xNudhWY/edit?tab=t.0#heading=h.kafj5bu4xwe6"
+  },
+
+  {
+    keywords:["web app","operations app"],
+    title:"Open Operations Web App",
+    url:"https://script.google.com/macros/s/AKfycbxhBZlVkgqVBm04PE25iKLFeHIgboocE0VjZR3vVzZiodgGRtPJIfF2vGUL-fzNbLyZrg/exec?pli=1"
+  }
+
+];
+
+searchInput.addEventListener("keyup", function(){
+
+  const value = searchInput.value.toLowerCase();
+
+  searchResults.innerHTML = "";
+
+  if(value.length < 2){
+    return;
+  }
+
+  const found = links.find(link =>
+    link.keywords.some(keyword =>
+      keyword.includes(value) || value.includes(keyword)
+    )
+  );
+
+  if(found){
+
+    searchResults.innerHTML = `
+      <p>Just a click away!</p>
+
+      <a
+        class="search-result-btn"
+        href="${found.url}"
+        target="_blank"
+      >
+        ${found.title}
+      </a>
+    `;
+  }
+
+});
+
+</script>
+
 </body>
+
 </html>
