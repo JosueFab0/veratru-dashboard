@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>VeraTru Operations Dashboard</title>
 
@@ -14,13 +14,14 @@
     rel="stylesheet"
   >
 
-  <!-- FONT AWESOME ICONS -->
+  <!-- FONT AWESOME -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   >
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -100,23 +101,22 @@
 
     .hero{
       background:
-        linear-gradient(135deg,rgba(4,20,50,.96),rgba(14,55,116,.96)),
-        radial-gradient(circle at 15% 20%,rgba(255,255,255,.08),transparent 30%);
+      linear-gradient(135deg,rgba(4,20,50,.96),rgba(14,55,116,.96));
       color:white;
       padding:80px 9%;
     }
 
     .hero h1{
-      font-size:52px;
+      font-size:58px;
       line-height:1.05;
       margin-bottom:24px;
       letter-spacing:-1px;
     }
 
     .hero p{
-      font-size:19px;
+      font-size:22px;
       line-height:1.6;
-      max-width:540px;
+      max-width:560px;
     }
 
     /* ================= SEARCH BAR ================= */
@@ -152,7 +152,7 @@
       font-family:inherit;
     }
 
-    /* ================= MAIN LAYOUT ================= */
+    /* ================= MAIN ================= */
 
     .container{
       width:94%;
@@ -184,7 +184,7 @@
       margin-bottom:28px;
     }
 
-    /* ================= CORE ACTIONS ================= */
+    /* ================= CORE ================= */
 
     .core-layout{
       display:grid;
@@ -213,11 +213,8 @@
       background:white;
     }
 
-    .big-card:hover,
-    .tool-card:hover,
-    .procedure-card:hover,
-    .help-item:hover{
-      transform:translateY(-3px);
+    .big-card:hover{
+      transform:translateY(-4px);
       box-shadow:0 10px 22px rgba(0,0,0,.07);
     }
 
@@ -284,6 +281,10 @@
       transition:.2s ease;
     }
 
+    .help-item:hover{
+      background:#f7f9fc;
+    }
+
     .help-item:last-child{
       border-bottom:none;
     }
@@ -339,6 +340,11 @@
       transition:.2s ease;
     }
 
+    .tool-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 22px rgba(0,0,0,.07);
+    }
+
     .tool-content{
       display:flex;
       gap:16px;
@@ -382,6 +388,11 @@
       transition:.2s ease;
     }
 
+    .procedure-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 22px rgba(0,0,0,.07);
+    }
+
     .procedure-left{
       display:flex;
       align-items:center;
@@ -409,7 +420,7 @@
       line-height:1.5;
     }
 
-    /* ================= BOTTOM PANELS ================= */
+    /* ================= BOTTOM ================= */
 
     .bottom-grid{
       display:grid;
@@ -517,434 +528,529 @@
       font-size:17px;
     }
 
-    /* ================= MOBILE ================= */
-
-    @media(max-width:950px){
-      .nav-links{
-        display:none;
-      }
-
-      .search-box{
-        width:90%;
-      }
-
-      .core-layout,
-      .bottom-grid{
-        grid-template-columns:1fr;
-      }
-
-      .quick-help{
-        border-left:none;
-        padding-left:0;
-      }
-
-      .core-cards,
-      .tools-grid,
-      .procedures-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero h1{
-        font-size:38px;
-      }
-
-      footer{
-        flex-direction:column;
-        gap:20px;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 
-  <nav class="navbar">
-    <div class="nav-left">
-      <i class="fa-solid fa-bars menu-icon"></i>
-      <div class="logo">Vera<span>Tru</span></div>
-    </div>
+<nav class="navbar">
 
-    <div class="nav-links">
-      <a class="active" href="#">Home</a>
-      <a href="#">Operations</a>
-      <a href="#">SOPs & Policies</a>
-      <a href="#">Tools & Reports</a>
-      <a href="#">HR Resources</a>
-      <a href="#">Help</a>
-    </div>
-
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-  </nav>
-
-  <!-- ================= HERO ================= -->
-
-  <section class="hero">
-    <div>
-      <h1>Operations Dashboard</h1>
-      <p>Post payments, validate cases, and access tools in seconds.</p>
-    </div>
-  </section>
-
-  <!-- ================= SEARCH BAR ================= -->
-
-  <div class="blue-strip">
-    <div class="search-wrapper">
-      <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search for documents, tools, and more...">
-      </div>
-    </div>
+  <div class="nav-left">
+    <i class="fa-solid fa-bars menu-icon"></i>
+    <div class="logo">Vera<span>Tru</span></div>
   </div>
 
-  <main class="container">
+  <div class="nav-links">
+    <a class="active" href="#">Home</a>
+    <a href="#">Operations</a>
+    <a href="#">SOPs & Policies</a>
+    <a href="#">Tools & Reports</a>
+    <a href="#">HR Resources</a>
+    <a href="#">Help</a>
+  </div>
 
-    <!-- ================= CORE ACTIONS ================= -->
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-    <section class="panel">
-      <div class="core-layout">
+</nav>
 
-        <div>
-          <h2 class="section-title">
-            <i class="fa-solid fa-bolt"></i>
-            Core Actions
-          </h2>
+<!-- ================= HERO ================= -->
 
-          <p class="section-subtitle">
-            Your most used tools — one click away.
-          </p>
+<section class="hero">
 
-          <div class="core-cards">
+  <h1>Operations Dashboard</h1>
 
-            <!-- LINK PARA IDRE PORTAL -->
-            <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-              </div>
-              <h3>IDRE Portal</h3>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+  <p>
+    Post payments, validate cases, and access tools in seconds.
+  </p>
 
-            <!-- LINK PARA OPERATIONS SHEETS -->
-            <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle green">
-                <i class="fa-solid fa-file-excel"></i>
-              </div>
-              <h3>Operations Sheets</h3>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+</section>
 
-            <!-- LINK PARA PROJECTS SPREADSHEET -->
-            <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle blue">
-                <i class="fa-solid fa-diagram-project"></i>
-              </div>
-              <h3>Projects Spreadsheet</h3>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+<!-- ================= SEARCH ================= -->
 
-            <!-- LINK PARA NEW OPERATIONS WEB APP -->
-            <a class="big-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="icon-circle gold">
-                <i class="fa-solid fa-window-restore"></i>
-              </div>
-              <h3>New Operations Web App</h3>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+<div class="blue-strip">
 
-          </div>
-        </div>
+  <div class="search-wrapper">
 
-        <!-- ================= QUICK HELP ================= -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
 
-        <div class="quick-help">
-          <h2 class="section-title">
-            <i class="fa-regular fa-circle-question"></i>
-            Quick Help
-          </h2>
+      <input
+        type="text"
+        placeholder="Search for documents, tools, and more..."
+      >
+    </div>
 
-          <p class="section-subtitle">
-            Fast access to shared team resources.
-          </p>
+  </div>
 
-          <div class="help-list">
+</div>
 
-            <!-- LINK PARA PTO FORM -->
-            <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="help-left">
-                <div class="small-icon">
-                  <i class="fa-solid fa-calendar-days"></i>
-                </div>
-                <div class="help-text">
-                  <strong>PTO & Sick day Form</strong>
-                  <span>Shared calendar and PTO requests</span>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
+<main class="container">
 
-            <!-- LINK PARA TEAM MEETING -->
-            <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="help-left">
-                <div class="small-icon">
-                  <i class="fa-solid fa-video"></i>
-                </div>
-                <div class="help-text">
-                  <strong>Team Meeting Link</strong>
-                  <span>Group meeting access</span>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
+  <!-- ================= CORE ACTIONS ================= -->
 
-            <!-- LINK PARA SOPS -->
-            <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="help-left">
-                <div class="small-icon">
-                  <i class="fa-solid fa-book"></i>
-                </div>
-                <div class="help-text">
-                  <strong>SOPs & Policies</strong>
-                  <span>Guides and internal procedures</span>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
+  <section class="panel">
 
-            <!-- LINK PARA HELP -->
-            <a class="help-item" href="XXXXXXXXXX LINK AQUI" target="_blank">
-              <div class="help-left">
-                <div class="small-icon">
-                  <i class="fa-solid fa-headset"></i>
-                </div>
-                <div class="help-text">
-                  <strong>Need Support?</strong>
-                  <span>Help center or support channel</span>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
+    <div class="core-layout">
 
-          </div>
-        </div>
+      <div>
 
-      </div>
-    </section>
+        <h2 class="section-title">
+          <i class="fa-solid fa-bolt"></i>
+          Core Actions
+        </h2>
 
-    <!-- ================= TOOLS & REPORTS ================= -->
-
-    <section class="panel">
-      <h2 class="section-title">
-        <i class="fa-solid fa-chart-column"></i>
-        Tools & Reports
-      </h2>
-
-      <p class="section-subtitle">
-        Access reports, trackers, and operational tools.
-      </p>
-
-      <div class="tools-grid">
-
-        <!-- LINK PARA OPERATIONS SHEETS -->
-        <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="tool-content">
-            <div class="tool-icon">
-              <i class="fa-solid fa-file-excel"></i>
-            </div>
-            <div>
-              <h3>Operations Sheets</h3>
-              <p>Daily operations sheets and payment tracking.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <!-- LINK PARA PROJECTS SPREADSHEET -->
-        <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="tool-content">
-            <div class="tool-icon">
-              <i class="fa-solid fa-table"></i>
-            </div>
-            <div>
-              <h3>Projects Spreadsheet</h3>
-              <p>Project tracking, updates, and follow ups.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <!-- LINK PARA PTO FORM -->
-        <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="tool-content">
-            <div class="tool-icon">
-              <i class="fa-solid fa-calendar-check"></i>
-            </div>
-            <div>
-              <h3>PTO & Sick day Form</h3>
-              <p>Submit PTO or sick day requests.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <!-- LINK PARA TEAM MEETING -->
-        <a class="tool-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="tool-content">
-            <div class="tool-icon">
-              <i class="fa-solid fa-video"></i>
-            </div>
-            <div>
-              <h3>Team Meeting Link</h3>
-              <p>Access the group meeting room.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ================= STANDARD PROCEDURES ================= -->
-
-    <section class="panel">
-      <h2 class="section-title">
-        <i class="fa-solid fa-book-open"></i>
-        Standard Procedures
-      </h2>
-
-      <p class="section-subtitle">
-        Step-by-step guides and procedures.
-      </p>
-
-      <div class="procedures-grid">
-
-        <!-- LINK PARA FULL SOP -->
-        <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="procedure-left">
-            <div class="procedure-icon">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
-            <div>
-              <h3>Full SOP</h3>
-              <p>Complete Standard Operating Procedures.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <!-- LINK PARA POSTING PAYMENTS -->
-        <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="procedure-left">
-            <div class="procedure-icon">
-              <i class="fa-solid fa-list-check"></i>
-            </div>
-            <div>
-              <h3>Posting Payments</h3>
-              <p>Step-by-step guide to post payments.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-        <!-- LINK PARA HANDLING EXCEPTIONS -->
-        <a class="procedure-card" href="XXXXXXXXXX LINK AQUI" target="_blank">
-          <div class="procedure-left">
-            <div class="procedure-icon warning">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-            <div>
-              <h3>Handling Exceptions</h3>
-              <p>Special cases and exceptions.</p>
-            </div>
-          </div>
-          <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ================= BOTTOM PANELS ================= -->
-
-    <section class="bottom-grid">
-
-      <div class="info-panel">
-        <h3>
-          <i class="fa-regular fa-bell"></i>
-          Daily Reminders
-        </h3>
-
-        <ul>
-          <li><i class="fa-regular fa-circle-check"></i> Check IDRE for new payments</li>
-          <li><i class="fa-regular fa-circle-check"></i> Verify amounts and customer info</li>
-          <li><i class="fa-regular fa-circle-check"></i> Use the correct operations sheet</li>
-          <li><i class="fa-regular fa-circle-check"></i> Update status when needed</li>
-          <li><i class="fa-regular fa-circle-check"></i> Log any exceptions</li>
-        </ul>
-      </div>
-
-      <div class="info-panel">
-        <h3>
-          <i class="fa-solid fa-link"></i>
-          Helpful Links
-        </h3>
-
-        <ul class="link-list">
-          <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">IDRE Portal</a><i class="fa-solid fa-up-right-from-square"></i></li>
-          <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">Operations Sheets</a><i class="fa-solid fa-up-right-from-square"></i></li>
-          <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">Projects Spreadsheet</a><i class="fa-solid fa-up-right-from-square"></i></li>
-          <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">PTO & Sick day Form</a><i class="fa-solid fa-up-right-from-square"></i></li>
-          <li><a href="XXXXXXXXXX LINK AQUI" target="_blank">Team Meeting Link</a><i class="fa-solid fa-up-right-from-square"></i></li>
-        </ul>
-      </div>
-
-      <div class="info-panel">
-        <h3>
-          <i class="fa-solid fa-headset"></i>
-          Need Support?
-        </h3>
-
-        <p>
-          Can't find what you need? Use the support channel or open the team meeting link.
+        <p class="section-subtitle">
+          Your most used tools — one click away.
         </p>
 
-        <div class="support-buttons">
+        <div class="core-cards">
 
-          <!-- LINK PARA TEAM MEETING -->
-          <a class="btn-primary" href="XXXXXXXXXX LINK AQUI" target="_blank">
-            Open Team Meeting
+          <!-- IDRE PORTAL -->
+
+          <a
+            class="big-card"
+            href="https://app.veratru.com/dashboard/cases/d3afaf96-f3a8-441a-abf0-f9863cfad62b?tab=ledger"
+            target="_blank"
+          >
+
+            <div class="icon-circle">
+              <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+
+            <h3>IDRE Portal</h3>
+
+            <div class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
           </a>
 
-          <!-- LINK PARA OPERATIONS SHEETS -->
-          <a class="btn-secondary" href="XXXXXXXXXX LINK AQUI" target="_blank">
-            Open Operations Sheets
+          <!-- OPERATIONS SHEETS -->
+
+          <a
+            class="big-card"
+            href="https://docs.google.com/spreadsheets/d/18OF6YkI-QSkLeV4D7CJhDZTE8xgQJwZIkLsxRmgc7xU/edit?usp=drivesdk"
+            target="_blank"
+          >
+
+            <div class="icon-circle green">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+
+            <h3>Operations Sheets</h3>
+
+            <div class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+          </a>
+
+          <!-- PROJECTS SPREADSHEET -->
+
+          <a
+            class="big-card"
+            href="https://docs.google.com/spreadsheets/d/1-rz8_BDvLMAA-rWYqqAsSRQbQYFNUiWfy1vPB96jNhM/edit?usp=sharing"
+            target="_blank"
+          >
+
+            <div class="icon-circle blue">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+
+            <h3>Projects Spreadsheet</h3>
+
+            <div class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+          </a>
+
+          <!-- NEW WEB APP -->
+
+          <a
+            class="big-card"
+            href="https://script.google.com/macros/s/AKfycbxhBZlVkgqVBm04PE25iKLFeHIgboocE0VjZR3vVzZiodgGRtPJIfF2vGUL-fzNbLyZrg/exec?pli=1"
+            target="_blank"
+          >
+
+            <div class="icon-circle gold">
+              <i class="fa-solid fa-window-restore"></i>
+            </div>
+
+            <h3>New Operations Web App</h3>
+
+            <div class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
           </a>
 
         </div>
+
       </div>
 
-    </section>
+      <!-- ================= QUICK HELP ================= -->
 
-  </main>
+      <div class="quick-help">
 
-  <!-- ================= FOOTER ================= -->
+        <h2 class="section-title">
+          <i class="fa-regular fa-circle-question"></i>
+          Quick Help
+        </h2>
 
-  <footer>
-    <div class="footer-left">
-      <i class="fa-solid fa-shield-halved"></i>
-      <span>VeraTru Operations Portal</span>
-    </div>
+        <p class="section-subtitle">
+          Fast access to shared team resources.
+        </p>
 
-    <div class="footer-right">
-      <span>Stay connected</span>
+        <div class="help-list">
 
-      <div class="footer-icons">
-        <i class="fa-solid fa-users"></i>
-        <i class="fa-regular fa-envelope"></i>
-        <i class="fa-solid fa-video"></i>
+          <!-- PTO FORM -->
+
+          <a
+            class="help-item"
+            href="https://forms.gle/ABVQ7HVnweMNgKb47"
+            target="_blank"
+          >
+
+            <div class="help-left">
+
+              <div class="small-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+
+              <div class="help-text">
+                <strong>PTO & Sick day Form</strong>
+                <span>Shared calendar and PTO requests</span>
+              </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+          <!-- TEAM MEETING -->
+
+          <a
+            class="help-item"
+            href="https://meet.google.com/hcv-aoyw-meg?authuser=0"
+            target="_blank"
+          >
+
+            <div class="help-left">
+
+              <div class="small-icon">
+                <i class="fa-solid fa-video"></i>
+              </div>
+
+              <div class="help-text">
+                <strong>Team Meeting Link</strong>
+                <span>Group meeting access</span>
+              </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+          <!-- SOP -->
+
+          <a
+            class="help-item"
+            href="https://docs.google.com/document/d/1X807uuvjo1gSMC1VzGhYQEEOYMwDRNWKwEV2xNudhWY/edit?tab=t.0#heading=h.kafj5bu4xwe6"
+            target="_blank"
+          >
+
+            <div class="help-left">
+
+              <div class="small-icon">
+                <i class="fa-solid fa-book"></i>
+              </div>
+
+              <div class="help-text">
+                <strong>SOPs & Policies</strong>
+                <span>Guides and internal procedures</span>
+              </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+        </div>
+
       </div>
+
     </div>
-  </footer>
+
+  </section>
+
+  <!-- ================= TOOLS ================= -->
+
+  <section class="panel">
+
+    <h2 class="section-title">
+      <i class="fa-solid fa-chart-column"></i>
+      Tools & Reports
+    </h2>
+
+    <p class="section-subtitle">
+      Access reports, trackers, and operational tools.
+    </p>
+
+    <div class="tools-grid">
+
+      <!-- PTO TRACKER -->
+
+      <a
+        class="tool-card"
+        href="https://docs.google.com/spreadsheets/d/1qAumtYl5_wI5EGH0GMEsSfFHKfE2jmbJ/edit?gid=1619325805#gid=1619325805"
+        target="_blank"
+      >
+
+        <div class="tool-content">
+
+          <div class="tool-icon">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+
+          <div>
+            <h3>PTO Tracker</h3>
+            <p>Track PTO and sick day requests.</p>
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- DAY OF PURPOSE -->
+
+      <a
+        class="tool-card"
+        href="https://docs.google.com/document/d/1SPXEJY3EHwEQmseUwEzYWVlbsZBJP7fG/edit"
+        target="_blank"
+      >
+
+        <div class="tool-content">
+
+          <div class="tool-icon">
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+
+          <div>
+            <h3>Day of Purpose Policy</h3>
+            <p>Internal policy documentation.</p>
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- FLOATING HOLIDAY -->
+
+      <a
+        class="tool-card"
+        href="https://docs.google.com/document/d/15m62o9Jfs5mM85bA10mDX0yoUP5EMeunE5HmKPSFbXk/edit?tab=t.0#heading=h.aitiacmuyvio"
+        target="_blank"
+      >
+
+        <div class="tool-content">
+
+          <div class="tool-icon">
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+
+          <div>
+            <h3>Floating Holiday Policy</h3>
+            <p>Company floating holiday policy.</p>
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- SOP -->
+
+      <a
+        class="tool-card"
+        href="https://docs.google.com/document/d/1X807uuvjo1gSMC1VzGhYQEEOYMwDRNWKwEV2xNudhWY/edit?tab=t.0#heading=h.kafj5bu4xwe6"
+        target="_blank"
+      >
+
+        <div class="tool-content">
+
+          <div class="tool-icon">
+            <i class="fa-solid fa-book"></i>
+          </div>
+
+          <div>
+            <h3>Full SOP</h3>
+            <p>Complete Standard Operating Procedures.</p>
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ================= BOTTOM ================= -->
+
+  <section class="bottom-grid">
+
+    <!-- DAILY REMINDERS -->
+
+    <div class="info-panel">
+
+      <h3>
+        <i class="fa-regular fa-bell"></i>
+        Daily Reminders
+      </h3>
+
+      <ul>
+
+        <li>
+          <i class="fa-regular fa-circle-check"></i>
+          Check IDRE for new payments
+        </li>
+
+        <li>
+          <i class="fa-regular fa-circle-check"></i>
+          Verify amounts and customer info
+        </li>
+
+        <li>
+          <i class="fa-regular fa-circle-check"></i>
+          Use the correct operations sheet
+        </li>
+
+        <li>
+          <i class="fa-regular fa-circle-check"></i>
+          Update status when needed
+        </li>
+
+        <li>
+          <i class="fa-regular fa-circle-check"></i>
+          Log any exceptions
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- HELPFUL LINKS -->
+
+    <div class="info-panel">
+
+      <h3>
+        <i class="fa-solid fa-link"></i>
+        Helpful Links
+      </h3>
+
+      <ul class="link-list">
+
+        <li>
+          <a href="https://app.veratru.com/dashboard/cases/d3afaf96-f3a8-441a-abf0-f9863cfad62b?tab=ledger" target="_blank">
+            IDRE Portal
+          </a>
+        </li>
+
+        <li>
+          <a href="https://docs.google.com/spreadsheets/d/18OF6YkI-QSkLeV4D7CJhDZTE8xgQJwZIkLsxRmgc7xU/edit?usp=drivesdk" target="_blank">
+            Operations Sheets
+          </a>
+        </li>
+
+        <li>
+          <a href="https://docs.google.com/spreadsheets/d/1-rz8_BDvLMAA-rWYqqAsSRQbQYFNUiWfy1vPB96jNhM/edit?usp=sharing" target="_blank">
+            Projects Spreadsheet
+          </a>
+        </li>
+
+        <li>
+          <a href="https://forms.gle/ABVQ7HVnweMNgKb47" target="_blank">
+            PTO Form
+          </a>
+        </li>
+
+        <li>
+          <a href="https://meet.google.com/hcv-aoyw-meg?authuser=0" target="_blank">
+            Team Meeting
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- SUPPORT -->
+
+    <div class="info-panel">
+
+      <h3>
+        <i class="fa-solid fa-headset"></i>
+        Need Support?
+      </h3>
+
+      <p>
+        Can't find what you need?
+        Use the support channel or open the team meeting link.
+      </p>
+
+      <div class="support-buttons">
+
+        <a
+          class="btn-primary"
+          href="https://meet.google.com/hcv-aoyw-meg?authuser=0"
+          target="_blank"
+        >
+          Open Team Meeting
+        </a>
+
+        <a
+          class="btn-secondary"
+          href="https://docs.google.com/spreadsheets/d/18OF6YkI-QSkLeV4D7CJhDZTE8xgQJwZIkLsxRmgc7xU/edit?usp=drivesdk"
+          target="_blank"
+        >
+          Open Operations Sheets
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-left">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span>VeraTru Operations Portal</span>
+  </div>
+
+  <div class="footer-right">
+
+    <span>Stay connected</span>
+
+    <div class="footer-icons">
+      <i class="fa-solid fa-users"></i>
+      <i class="fa-regular fa-envelope"></i>
+      <i class="fa-solid fa-video"></i>
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
